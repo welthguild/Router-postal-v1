@@ -58,9 +58,7 @@ export function UpgradeForm() {
             return;
           }
           setSubmitting(true);
-          if (typeof window !== "undefined") {
-            sessionStorage.setItem(TIER_KEY, JSON.stringify(selected));
-          }
+          sessionStorage.setItem(TIER_KEY, JSON.stringify(selected));
           setTimeout(() => navigate("/processing"), 900);
         }}
         className="mt-4 flex w-full items-center justify-center gap-2.5 rounded-2xl border-0 bg-[var(--text)] px-4 py-[18px] text-[15px] font-bold tracking-[-0.01em] text-[var(--bg)] transition hover:brightness-90 disabled:opacity-30"
@@ -70,7 +68,7 @@ export function UpgradeForm() {
 
       <button
         type="button"
-        onClick={() => navigate({ to: "/dashboard" })}
+        onClick={() => navigate("/dashboard")}
         className="mt-3 w-full rounded-2xl border border-[var(--border)] bg-transparent px-4 py-[18px] text-[15px] font-bold text-[var(--muted)] transition hover:border-[var(--border-bright)] hover:text-[var(--text)]"
       >
         Cancel
