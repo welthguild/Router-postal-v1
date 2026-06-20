@@ -217,6 +217,7 @@ export async function getHistory(): Promise<PaymentRecord[]> {
       amount: "$4,000",
       status: "Approved",
       reference: "PMT-9X2K1A",
+      read: true,
     },
     {
       id: "p2",
@@ -225,6 +226,7 @@ export async function getHistory(): Promise<PaymentRecord[]> {
       amount: "$1,500",
       status: "Approved",
       reference: "PMT-72BC0Z",
+      read: true,
     },
     {
       id: "p3",
@@ -233,9 +235,11 @@ export async function getHistory(): Promise<PaymentRecord[]> {
       amount: "$1,500",
       status: "Pending",
       reference: "PMT-44H8MQ",
+      read: false,
     },
   ];
 }
+
 
 export async function getPaymentById(id: string): Promise<PaymentRecord | null> {
   await wait(200);
